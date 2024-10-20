@@ -8,6 +8,7 @@ int partIndex(){
     for(int i{0};i < input.length();i++){
         if(input[i] != part[0]) continue;
 
+        if(i + part.length() > input.length()){ return -1; }
         int index{ i };
         for(int j{1};j < part.length();j++){
             if(input[i + j] != part[j]) index = -1; break;
