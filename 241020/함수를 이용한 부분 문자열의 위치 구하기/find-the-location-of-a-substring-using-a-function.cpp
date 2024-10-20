@@ -11,7 +11,7 @@ int partIndex(){
         if(i + part.length() > input.length()){ return -1; }
         int index{ i };
         for(int j{1};j < part.length();j++){
-            if(input[i + j] != part[j]) index = -1; break;
+            if(input[i + j] != part[j]) { index = -1; break; }
         }
         if(index != -1){ return index; }
     }
