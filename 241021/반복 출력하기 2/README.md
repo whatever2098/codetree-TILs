@@ -1,3 +1,5 @@
+https://velog.io/@dlgosla/JAVA-사용자-입력받기
+
 # [반복 출력하기 2 ](https://www.codetree.ai/missions/5/problems/repeated-output-2)
 
 |유형|문제 경험치|난이도|
