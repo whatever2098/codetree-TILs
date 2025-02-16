@@ -5,11 +5,11 @@ int f(int n){
     if(n == 1){
         return n;
     }
-    return n * (n - 1);
+    return n * f(n - 1);
 }
 
 int main(){
-    sync_with_stdio(0);
+    ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
 
     int N;
