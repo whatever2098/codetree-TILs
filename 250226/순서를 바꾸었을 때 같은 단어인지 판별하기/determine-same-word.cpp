@@ -10,8 +10,8 @@ int main() {
     cin >> word1;
     cin >> word2;
 
-    sort(word1, word1 + (int)word1.length());
-    sort(word2, word2 + (int)word2.length());
+    sort(word1.begin(), word1.end());
+    sort(word2.begin(), word2.end());
 
     cout << ((word1 == word2)? "Yes" : "No") << "\n";
 
