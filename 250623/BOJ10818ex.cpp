@@ -1,20 +1,22 @@
 #include <bits/stdc++.h>
-#include <vector>
-#include <algorithm>
 using namespace std;
 
-int main(){
-  ios_base::sync_with_stdio(0);
-  cin.tie(0); cout.tie(0);
+int main() {
+    // I/O 속도 최적화
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
-  int N;
-  cin >> N;
-  vector<int> nums(N);
-  for(int i = 0; i < N; ++i){
-          cin >> nums[i];
-  }
-      
-  sort(nums.begin(), nums.end());
-  cout << nums[0] << " " << nums[N - 1] << "\n";
+    int N;
+    if (!(cin >> N) || N <= 0) return 0;  // 입력 검증
 
+    vector<int> nums(N);
+    for (int i = 0; i < N; ++i) {
+        cin >> nums[i];  // 사용자 입력값 저장
+    }
+
+    // 정렬을 통해 최솟값·최댓값을 찾음
+    sort(nums.begin(), nums.end());
+    cout << nums.front() << ' ' << nums.back() << '\n';
+
+    return 0;
 }
