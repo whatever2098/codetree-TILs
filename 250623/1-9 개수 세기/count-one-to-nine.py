@@ -6,5 +6,5 @@ counts = [0 for _ in range(10)]
 for i in range(n):
     if nums[i] == i:
         counts[i] += 1
-for i in range(9):
+for i in range(n):
     print(counts[i])
