@@ -4,7 +4,7 @@
   1승을 계산할 수 있다. k승을 계산했으면 2k승과 2k+1승도 O(1)에 계산할 수 있다.
   <수학적 귀납법>''' #시간복잡도 O(log b)
 
-using ll = for long long
+
 
 ll(input().split())
 def multiple(A, B, C):
