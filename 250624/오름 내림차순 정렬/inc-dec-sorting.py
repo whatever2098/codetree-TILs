@@ -2,7 +2,9 @@ n = int(input())
 nums = list(map(int, input().split()))
 
 nums.sort()
-print(nums, end=" ")
+for x in nums:
+    print(x, end=" ")
 nums.sort(reverse = True)
 print()
-print(nums, end=" ")
+for x in nums:
+    print(x, end=" ")
