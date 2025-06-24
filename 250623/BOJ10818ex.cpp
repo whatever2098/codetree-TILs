@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <algorithm>
 using namespace std;
 
 int main() {
@@ -11,7 +12,7 @@ int main() {
 
     vector<int> nums(N);
     for (int i = 0; i < N; ++i) {
-        cin >> nums[i];  // 사용자 입력값 저장
+      cin >> nums[i];  // 사용자 입력값 저장
     }
 
     // 정렬을 통해 최솟값·최댓값을 찾음
@@ -19,4 +20,4 @@ int main() {
     cout << nums.front() << ' ' << nums.back() << '\n';
 
     return 0;
-}
+}//clang-format
