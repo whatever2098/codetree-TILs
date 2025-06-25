@@ -1,9 +1,6 @@
 n = int(input())
 digits = []
 
-while n > 0:
-    arr.append(n % 2)
-    n //= 2
 while True:
     if n < 2:
         digits.append(n)
