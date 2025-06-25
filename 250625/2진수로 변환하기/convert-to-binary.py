@@ -1,9 +1,17 @@
 n = int(input())
+digits = []
 
-answer = []
 while n > 0:
-    answer.append(n % 2)
-    n //=2:
+    arr.append(n % 2)
+    n //= 2
+while True:
+    if n < 2:
+        digits.append(n)
+        break
 
-for x in answer[::-1]:
-    print(x)
+    digits.append(n % 2)
+    n //= 2
+
+# print binary number
+for digit in digits[::-1]:
+    print(digit, end="")
