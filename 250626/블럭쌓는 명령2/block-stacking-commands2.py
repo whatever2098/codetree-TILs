@@ -9,4 +9,4 @@ for _ in range(k):
 
 
 blocks.sort(reverse = True)
-print(blocks[1])
+print(blocks[0])
