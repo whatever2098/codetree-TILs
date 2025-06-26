@@ -12,7 +12,7 @@ max_coord = max(b for a, b in segments)
 blanks = [0] * max_coord
 
 # 5) 각 세그먼트 [a..b] (포함) 구간에 대해
-#    1-based→0-based 변환: range(a-1, b)
+#    1-based→0-based 변환: ran ge(a-1, b)
 for a, b in segments:
     for i in range(a - 1, b):
         blanks[i] += 1
