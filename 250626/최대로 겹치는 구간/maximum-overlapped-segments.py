@@ -35,4 +35,4 @@ for a, b in segments:
         blanks[i] += 1
 
 blanks.sort(reverse=True)
-print(blanks[1])
+print(blanks[0])
