@@ -22,7 +22,7 @@ n = int(input())
 segments = [tuple(map(int, input().split())) for _ in range(n)]
 
 # 3) 가장 멀리 뻗은 끝 점을 찾아서
-max_coord = max(b for _, b in segments)
+max_coord = max(b for a, b in segments)
 
 # 4) 그 끝 점까지 담을 수 있게 blanks 초기화
 #    (1-based 입력을 0-based [0..max_coord-1] 로 다룰 거라 길이를 max_coord로)
