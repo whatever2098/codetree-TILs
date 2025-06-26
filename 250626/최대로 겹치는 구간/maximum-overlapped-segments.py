@@ -14,31 +14,47 @@ for segment in segments:
 blanks.sort(reverse = True)
 print(blanks[1])'''
 
-# 1) 세그먼트 개수 n
-n = int(input().strip())
+import sys
 
-# 2) 이벤트 리스트 만들기
-#    구간 [a, b]가 포함 구간이라면
-#    (a, +1) → 겹침 시작
-#    (b+1, -1) → b까지 포함했으니 그 다음부터 빠짐
-events = []
-for _ in range(n):
-    a, b = map(int, input().split())
-    events.append((a,  1))
-    events.append((b+1, -1))
+def max_overlapping_segments(segments):
+    """
+    segments: [(x1, x2), ...] 형태의 리스트. 각 선분은 x1 < x2를 만족.
+    반환값: 어떤 구간에서 가장 많이 겹치는 선분의 개수 (int)
+    """
+    # 1) 스위프 라인 이벤트 생성
+    #    각 선분 (x1, x2) 에 대해
+    #      (x1, +1) → 이 좌표부터 겹침 개수 +1
+    #      (x2, -1) → 이 좌표부터 겹침 개수 -1
+    events = []
+    for x1, x2 in segments:
+        events.append((x1, +1))
+        events.append((x2, -1))
 
-# 3) 좌표순으로 정렬하되,
-#    동일 좌표면 “+1”이 먼저 처리되도록
-events.sort(key=lambda ev: (ev[0], -ev[1]))
+    # 2) 이벤트 정렬
+    #    첫째 키: x 좌표 오름차순
+    #    둘째 키: delta 값 오름차순  → 같은 x에서 -1이 +1보다 먼저
+    #    → 끝점에서 딱 맞닿는 경우를 겹치지 않는 것으로 처리
+    events.sort(key=lambda e: (e[0], e[1]))
 
-# 4) 한 줄씩 스윕하며 최대값 계산
-current = 0
-best = 0
-for coord, delta in events:
-    current += delta
-    if current > best:
-        best = current
+    # 3) 한 번 스캔하며 최대값 추적
+    current = 0  # 지금 스캔한 지점(바로 오른쪽)에 겹쳐 있는 선분 수
+    best = 0     # 지금까지 본 최고 겹침 수
 
-# 5) 정답 출력
-print(best)
+    for x, delta in events:
+        current += delta     # 이벤트에 따라 +1 또는 -1
+        if current > best:
+            best = current   # 새로 최대치 갱신
 
+    return best
+
+def main():
+    input = sys.stdin.readline
+    N = int(input().strip())
+    segments = []
+    for _ in range(N):
+        x1, x2 = map(int, input().split())
+        segments.append((x1, x2))
+    print(max_overlapping_segments(segments))
+
+if __name__ == "__main__":
+    main()
