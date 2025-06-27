@@ -12,7 +12,7 @@ for a, b in range(k):
 blocks.sort(reverse = True)
 print(blocks[1])'''
 
-n, k = tuple(map(int, input().split()))
+'''n, k = tuple(map(int, input().split()))
 segments = [
     tuple(map(int, input().split()))
     for _ in range(k)
@@ -27,4 +27,18 @@ for a, b in segments:
 
 # 최댓값을 구합니다.
 max_num = max(blocks)
-print(max_num)
+print(max_num)'''
+
+
+n, k = map(int, input().split())
+
+blocks = [0 for _ in range(n)]
+
+for _ in range(k):
+    a, b = map(int, input().split())
+    for i in range(a - 1, b):  #여기를 알 수 없음
+        blocks[i] += 1
+
+
+blocks.sort(reverse = True)
+print(blocks[0])
