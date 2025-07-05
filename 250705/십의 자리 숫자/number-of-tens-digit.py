@@ -1,35 +1,16 @@
-# 1) 구간 개수: 0–9, 10–19, …, 90–99 → 총 10개
+# 십의 자리 숫자를 셀 카운트 배열 (0~9)
 counts = [0] * 10
 
-# 2) 입력 받기
-numbers = list(map(int, input().split()))
+# 입력값을 한 줄로 읽어서, 0이 나오기 전까지만 순회
+nums = list(map(int, input().split()))
+for num in nums:
+    if num == 0:
+        break        # 0 나오면 종료
+    # 0~99 범위이므로 //10 한 값이 바로 “십의 자리 숫자”
+    ten = num // 10
+    counts[ten] += 1
 
-# 3) 각 숫자에 대해 적절한 버킷 계산 및 카운트
-for num in numbers:
-    if num < 0:
-        # 음수는 무시하고 0은 세기
-        continue
-    bucket = num // 10          # 정수 나눗셈 → 0,1,2,…,9
-    if bucket >= len(counts):
-        # 100 이상인 수는 맨 마지막 구간으로 몰아넣기
-        bucket = len(counts) - 1
-    counts[bucket] += 1
+# 1~9 십의 자리만 출력
+for i in range(1, 10):
+    print(f"{i} - {counts[i]}")
 
-# 4) 결과 출력
-for idx, cnt in enumerate(counts):
-    if idx == 0:
-        continue
-    print(f"{idx} - {cnt}")
-
-
-
-'''for idx, cnt in enumerate(counts):
-    if idx == 0:
-        continue        # idx 0(0~9 구간)은 건너뛴다
-    print(f"{idx} - {cnt}")'''
-
-
-# counts[1:] 로 1~9 구간만 뽑아내고,
-# enumerate(..., start=1) 으로 idx가 1부터 시작하게 만든다
-'''for idx, cnt in enumerate(counts[1:], start=1):
-    print(f"{idx} - {cnt}")'''
