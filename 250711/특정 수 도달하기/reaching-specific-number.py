@@ -10,4 +10,4 @@ for x in nums:
     count += 1 
 
 average = total / count
-print(f"{total} {average}")
+print(f"{total} {average:.1f}")
