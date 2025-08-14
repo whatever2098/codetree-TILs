@@ -32,11 +32,12 @@ int main() {
         case 3: eval = "Good";
         break;
         
-        default: eval = "Poor";
+        case 2:
+        case 1:
+        case 0: eval = "Poor"; break;
     }
     cout << eval << "\n";
     return 0;
 }
 
-// double d = 3.14159;
-// int i = static_cast<int>(d); // 소수점 이하 버림
+
