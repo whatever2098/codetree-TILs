@@ -22,5 +22,5 @@ elif(avg < 3.0):
 #print("Perfect" if avg >= 4.0 else "Good" if avg >= 3.0 else "Poor")
 #avg round(total/n, 1) 1번째 까지 반올림
 
-
+# print(f"{avg:.1f}")  # 소수 1자리까지 반올림하여 출력
 
