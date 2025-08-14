@@ -19,5 +19,8 @@ elif avg >= 3.0:
 elif(avg < 3.0):
     print("Poor")
 
+#print("Perfect" if avg >= 4.0 else "Good" if avg >= 3.0 else "Poor")
+#avg round(total/n, 1) 1번째 까지 반올림
+
 
 
