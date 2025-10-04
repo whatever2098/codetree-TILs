@@ -2,6 +2,8 @@ import sys
 input = sys.stdin.readline
 
 N, Q = input().split()
+N = int(N)
+Q = int(Q)
 element = input().split() #list
 
 instruction = ""
