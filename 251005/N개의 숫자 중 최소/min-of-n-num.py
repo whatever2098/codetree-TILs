@@ -8,9 +8,9 @@ for i in range(1, n):
     if min_num > a[i]:
         min_num = a[i]
 
-for i in range(1, n):
+for i in range(n):
     if min_num == a[i]:
         cnt_min += 1
 
-print(str(min_num) + " " + str(cnt_min))
+print(min_num, cnt_min)
 
