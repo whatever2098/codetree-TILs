@@ -11,7 +11,7 @@ for i in range(2):
         total += arr_2d[i][j]
     avg_row.append(total / 4)
 
-print(*avg_row)
+print(*[f"{x:.1f}" for x in avg_row])
 
 avg_col = []
 for j in range(4):
@@ -20,8 +20,12 @@ for j in range(4):
         total += arr_2d[i][j]
     avg_col.append(total / 2)
 
-print(*avg_col)
+print(*[f"{x:.1f}" for x in avg_col])
 
 total_sum = sum(sum(row) for row in arr_2d)
 avg_whole = total_sum / (2 * 4)
-print(avg_whole)
+print(f"{avg_whole:.1f}")
+
+
+
+
