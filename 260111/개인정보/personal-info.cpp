@@ -2,6 +2,7 @@
 #include <tuple>
 #include <algorithm>
 #include <vector>
+#include <iomanip>
 using namespace std;
 
 vector<tuple<string, int, double>> students;
@@ -29,6 +30,8 @@ bool cmp2(const tuple<string, int, double>& a, const tuple<string, int, double>&
 int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(nullptr);
+
+	cout << fixed << setprecision(1);
 
 	string name;
 	int h;
